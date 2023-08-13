@@ -1,0 +1,267 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: "Neue Haas Grotesk Text Pro";
+    font-weight: 400;
+    letter-spacing: -0.95px;
+    text-transform: uppercase;
+    text-decoration: none;
+    list-style: none;
+    color: #000;
+}
+
+@font-face { font-family: "Neue Haas Grotesk Text Pro"; src: url("../assets/fonts/NeueHaasTextPro.ttf"); }
+@font-face { font-family: "Grifinito L"; src: url("../assets/fonts/GrifinitoL.ttf"); }
+
+.loader-screen {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.counter {
+    height: 120px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.counter > span {
+    font-size: 170px;
+    font-family: "Grifinito L";
+    letter-spacing: -7px;
+    font-weight: lighter;
+    color: #f53016;
+}
+
+.body-container  {
+    width: 100%;
+    height: 100%;
+    padding: 3em;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.inner-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.upper-block {
+    width: 100%;
+    height: 270px;
+    z-index: 2;
+}
+
+.lower-block {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-items {
+    display: flex;
+    flex-grow: 0.09;
+    justify-content: space-between;
+}
+
+.brand, .menu-btn {
+    display: none;
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0.4em;
+    background: #f53016;
+    display: none;
+    z-index: 1;
+}
+
+.mm-container > .item-line {
+    width: 100%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.mm-container > .item-line > a {
+    position: relative;
+    margin-right: 10px;
+    font-size: 120px;
+    font-family: "Grifinito L";
+    letter-spacing: -4px;
+    color: #fff;
+}
+
+.block {
+    height: 100%;
+}
+
+.left-block {
+    display: flex;
+    flex-grow: 0.5;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-block {
+    flex-grow: 0.55;
+}
+
+.upper-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.lower-row {
+    width: 100%;
+    height: 184px;
+    display: flex;
+    align-items: center;
+}
+
+.lower-row > .image-box {
+    display: none;
+}
+
+.item-line, .p-line {
+    position: relative;
+    width: 100%;
+    height: 32px;
+}
+
+.whitespace {
+    flex-grow: 0.2;
+}
+
+.title-box {
+    height: 185px;
+    padding-right: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 > span {
+    position: relative;
+    font-size: 300px;
+    font-family: "Grifinito L";
+    font-weight: lighter;
+    letter-spacing: -8px;
+    text-transform: none;
+    color: #f53016;
+}
+
+.image-box, .image, .image-overlay  {
+    width: 100%;
+    height: 100%;
+}
+
+.image-box {
+    overflow: hidden;
+}
+
+.image-overlay {
+    position: relative;
+    background: #fff;
+}
+
+.image {
+    position: relative;
+    top: -100%;
+    background: url("../assets/img/model.jpg") no-repeat 50% 30%;
+    background-size: cover;
+    z-index: -1;
+}
+
+/* responsiveness styles */
+@media (max-width: 1280px) {
+    .body-container {
+        padding: 0.4em;
+    }
+
+    .upper-block {
+        height: 130px;
+    }
+
+    nav > a:first-child, .nav-items {
+        display: none;
+    }
+
+    .brand, .menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+
+    .left-block {
+        flex-grow: 1;
+    }
+
+    .right-block {
+        display: none;
+    }
+
+    .upper-row {
+        display: none;
+    }
+
+    .lower-row {
+        height: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lower-row > .image-box {
+        display: block;
+    }
+
+    .image {
+        background-position: 50% 10%;
+    }
+
+    h1 {
+        position: relative;
+        top: 24px;
+    }
+
+    h1 > span {
+        font-size: 130px;
+        letter-spacing: -5px;
+    }
+}

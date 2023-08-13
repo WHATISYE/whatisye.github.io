@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page 01</title>
+    <link rel="stylesheet" href="resources/assets/stylesheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+
+    <div class="loader-screen">
+        <div class="counter"><span></span></div>
+    </div>
+
+    <div class="body-container">
+        <div class="inner-container">
+            <div class="upper-block">
+                <nav>
+                    <a href="#" class="item">Portfolio 2023</a>
+                    <a href="#" class="brand item">RW</a>
+                    <a href="#" class="menu-btn item">Menu</a>
+                    <ul class="nav-items">
+                        <li><a href="#" class="item">IG</a></li>
+                        <li><a href="#" class="item">FB</a></li>
+                        <li><a href="#" class="item">YT</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <nav class="mobile-menu">
+                <div class="mm-container">
+                    <div class="item-line">
+                        <a href="#">Home</a>
+                    </div>
+                    <div class="item-line">
+                        <a href="#">Filmography</a>
+                    </div>
+                    <div class="item-line">
+                        <a href="#">About Me</a>
+                    </div>
+                    <div class="item-line">
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="lower-block">
+                <div class="left-block block">
+                    <div class="upper-row">
+                        <div class="menu">
+                            <div class="item-line">
+                                <a href="#" class="item">Home</a>
+                            </div>
+                            <div class="item-line">
+                                <a href="#" class="item">Filmography</a>
+                            </div>
+                            <div class="item-line">
+                                <a href="#" class="item">About Me</a>
+                            </div>
+                            <div class="item-line">
+                                <a href="#" class="item">Contact</a>
+                            </div>
+                        </div>
+                        <div class="paragraph-box">
+                            <div class="p-line">
+                                <span class="item">Through my lens, I capture life's</span>
+                            </div>
+                            <div class="p-line">
+                                <span class="item">beauty, emotions, and stories, weaving art</span>
+                            </div>
+                            <div class="p-line">
+                                <span class="item">with every click.</span>
+                            </div>
+                        </div>
+                        <div class="whitespace"></div>
+                    </div>
+                    <div class="lower-row">
+                        <div class="title-box">
+                            <h1>Rhea Warren</h1>
+                        </div>
+                        <div class="image-box">
+                            <div class="image-overlay"></div>
+                            <div class="image"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right-block block">
+                    <div class="image-box">
+                        <div class="image-overlay"></div>
+                        <div class="image"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+    gsap.to(".counter > span", 2, {
+        y: -120,
+        ease: "Expo.easeInOut",
+        delay: 5.2
+    });
+
+    gsap.from(".item", 0.5, {
+        alpha: 0,
+        ease: "Expo.easeInOut",
+        delay: 6.5,
+        stagger: {
+            amount: 0.5
+        },
+    });
+
+    gsap.to(".image-overlay", 2, {
+        top: "-100%",
+        ease: "power4.inOut",
+        delay: 5.8
+    });
+
+    gsap.from(".image", 3, {
+        scale: 1.5,
+        ease: "Expo.easeInOut",
+        delay: 5.3
+    });
+
+    // mobile menu reveal animation
+    var tl = new TimelineMax({ paused: true });
+
+    tl.from(".mobile-menu", 1.5, {
+        y: "-100%",
+        ease: "Expo.easeInOut",
+    });
+
+    tl.to(".brand, .menu-btn", 0.01, {
+        color: "#fff"
+    }, "-=1.07");
+
+    tl.from(".mm-container > .item-line > a ", 1.5, {
+        y: 100,
+        ease: "power4.inOut",
+        stagger: {
+            amount: 0.3
+        },
+    }, "-=1");
+
+    tl.reverse();
+    $(document).on("click", ".menu-btn", function() {
+        tl.reversed(!tl.reversed());
+    }); 
+    </script>
+    <script src="resources/assets/script.js"></script>
+</body>
+</html>
