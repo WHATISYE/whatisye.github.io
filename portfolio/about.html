@@ -29,6 +29,10 @@
                     <p>I love to create modern designs</p>
                     <p>with smooth animations.</p>
                 </div>
+                <a class="contact-link" href="contact.html">
+                    <span>Go to the contact page to get in touch and</span>
+                    <span>collaborate with me.</span>
+                </a>
             </div>
         </div>
     </div>
@@ -39,6 +43,13 @@
             opacity: 0,
             y: 10,
             ease: "power3.inOut"
+        });
+
+        gsap.from(".contact-link", 1, {
+            opacity: 0,
+            y: 10,
+            ease: "power3.inOut",
+            delay: 0.25
         });
     </script>
 </body>
