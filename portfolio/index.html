@@ -9,8 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
-<body>
-    <div class="body-container">
+<body class="index-body">
+    <div class="body-container index">
         <div class="inner-container">
             <nav>
                 <a class="link" href="index.html">YR Portfolio</a>
@@ -19,12 +19,59 @@
                     <a class="link" href="contact.html">Contact</a>
                 </ul>
             </nav>
+            <div class="index-container-header">
+                <div class="header-title">
+                    <h1>Digital</h1>
+                    <h1>Worker</h1>
+                </div>
+                <div class="sub-header-row">
+                    <div class="sub-header-box">
+                        <u>2023 Modern Web Designer</u>
+                    </div>
+                    <div class="sub-header-box">
+                        <u>Front-end Developer</u>
+                    </div>
+                </div>
+            </div>
+            <div class="index-container-hero"></div>
         </div>
     </div>
+    <a class="marquee" href="contact.html">
+        <div class="marquee-inner">
+            <span>Go to the contact page to get in touch →</span>
+            <span>Go to the contact page to get in touch →</span>
+            <span>Go to the contact page to get in touch →</span>
+            <span>Go to the contact page to get in touch →</span>
+        </div>
+    </a>
 
     <script src="resources/assets/vendor/script.js"></script>
     <script type="text/javascript">
-        
+        gsap.from(".header-title", 1, {
+            opacity: 0,
+            y: 10,
+            ease: "power3.inOut"
+        });
+
+        gsap.from(".sub-header-box", 1, {
+            opacity: 0,
+            y: 10,
+            ease: "power3.inOut",
+            delay: 0.2
+        });
+
+        gsap.from(".index-container-hero", 1, {
+            opacity: 0,
+            y: 20,
+            ease: "power3.inOut",
+            delay: 0.4
+        });
+
+        gsap.from(".marquee", 1, {
+            y: "4em",
+            ease: "power3.inOut",
+            delay: 0.3
+        });
     </script>
 </body>
 </html>
