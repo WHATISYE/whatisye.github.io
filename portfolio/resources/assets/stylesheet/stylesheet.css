@@ -152,6 +152,7 @@ nav {
     position: relative;
     width: fit-content;
     display: flex;
+    align-items: center;
     animation: marquee 10s linear infinite;
 }
 
@@ -179,6 +180,7 @@ nav {
 }
 
 .about-container-header > .header-paragraph {
+    width: 100%;
     flex-grow: 0;
 }
 
@@ -335,11 +337,11 @@ nav {
     }
 
     .sub-header-box:first-child {
-        margin-right: 7px;
+        margin-right: 5px;
     }
 
     .sub-header-box > u {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     .marquee {
@@ -348,6 +350,7 @@ nav {
     }
 
     .marquee-inner > span {
+        margin-top: 1.5px;
         font-size: 1.3em;
     }
 
